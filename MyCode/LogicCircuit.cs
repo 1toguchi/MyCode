@@ -24,35 +24,17 @@ namespace MyCode
             /// </summary>
             class LogicGate
             {
-                public static int Not(int A)
-                {
-                    return A == 0 ? 1 : 0;
-                }
+                public static int NOT(int a) { return a == 0 ? 1 : 0; }
 
-                public static int Or(int A, int B)
-                {
-                    return (A == 1 || B == 1) ? 1 : 0;
-                }
+                public static int OR(int a, int b) { return (a == 1 || b == 1) ? 1 : 0; }
 
-                public static int And(int A, int B)
-                {
-                    return (A == 1 && B == 1) ? 1 : 0;
-                }
+                public static int AND(int a, int b) { return (a == 1 && b == 1) ? 1 : 0; }
 
-                public static int Xor(int A, int B)
-                {
-                    return (A == B) ? 0 : 1;
-                }
+                public static int XOR(int a, int b) { return (a == b) ? 0 : 1; }
 
-                public static int Nor(int A, int B)
-                {
-                    return (A == 0 && B == 0) ? 1 : 0;
-                }
+                public static int NOR(int a, int b) { return (a == 0 && b == 0) ? 1 : 0; }
 
-                public static int Nand(int A, int B)
-                {
-                    return (A == 1 && B == 1) ? 0 : 1;
-                }   
+                public static int NAND(int a, int b) { return (a == 1 && b == 1) ? 0 : 1; }   
             }
 
             /// <summary>
@@ -64,8 +46,8 @@ namespace MyCode
                 public static Dictionary<string, int> HalfAdder(int A, int B)
                 {
                     int sum, carry;
-                    sum = LogicGate.Xor(A, B);
-                    carry = LogicGate.And(A, B);
+                    sum = LogicGate.XOR(A, B);
+                    carry = LogicGate.AND(A, B);
 
                     return ReturnAddderDict(sum, carry);
                 }
@@ -76,7 +58,7 @@ namespace MyCode
                     Dictionary<string, int> hf2 = HalfAdder(hf1["sum"], C);
 
                     int sum = hf2["sum"];
-                    int carry = LogicGate.Or(hf1["carry"], hf2["carry"]);
+                    int carry = LogicGate.OR(hf1["carry"], hf2["carry"]);
              
                     return ReturnAddderDict(sum,carry);
                 }
