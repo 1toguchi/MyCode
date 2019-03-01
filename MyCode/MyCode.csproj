@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DokusyuCSharp.cs" />
     <Compile Include="MyAlgorithms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
