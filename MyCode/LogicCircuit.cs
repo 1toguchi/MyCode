@@ -1,9 +1,15 @@
+using System;
 using System.Collections.Generic;
 
 namespace MyCode
 {
     public class LogicCircuit
     {
+
+
+        public static void Main(string[] args)
+        {
+        }
         // CombinationCircuit
         // SequentialCircuit
         
@@ -16,7 +22,37 @@ namespace MyCode
             // [ ] LogicGate
             //TODO: Bit enzan
                 // [ ] TODO: Bitshift
-            // [ ] EnCoder
+            // [x] EnCoder
+
+            /// <summary>
+            /// 2進数を10進数に変換する。
+            /// </summary>
+            public static int Decoder(string str, int baseNum = 2)
+            {
+                int result = 0;
+                for (int i = 0; i < str.Length; i++)
+                {
+                    result += int.Parse(str[(str.Length-1) - i].ToString()) * (int)Math.Pow(baseNum, i);
+                    Console.WriteLine("Now result is " + result);
+                }
+
+                return result;
+            }
+
+            /// <summary>
+            /// 10進数をn進数に変換する。
+            /// </summary>
+            public static string Encoder(int n, int baseNum = 2){
+                int num = n;
+                string str = "";
+                while (num != 0) {
+                    int k = num % baseNum;
+                    str = k + str;
+                    num /= baseNum;
+                }
+                return str;
+            }
+
             // [ ] MultiPlexer
             // [ ] Adder
                 //TODO: completion 
