@@ -92,6 +92,17 @@ namespace MyCode
             class BitwiseOperation
             {
                 //BitOR
+                public static string BitOR(string binaryStr, string maskBit)
+                {
+                    //todo exception
+                    if (binaryStr.Length == maskBit.Length) return "";
+
+                    for (int i = 0; i < binaryStr.Length; i++)
+                    {
+                        
+                    }
+                }
+                
                 //BitAND
                 //BitNOT
                 //BitXOR
@@ -101,6 +112,7 @@ namespace MyCode
                     // ArithmeticRightShift
                     // ArithmeticLeftShift
             }
+            
                 
             /// <summary>
             /// 加算器 ＝ 二進数の加算を行うもの。全加算器と半加算器がある。
